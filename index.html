@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>41</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            background-color: #ffffff;
+            color: #000;
+            font-family: Courier, monospace;
+            position: relative;
+        }
+
+        .moving-graphic {
+            position: fixed; /* Fix graphic at the bottom */
+            bottom: 0;
+            left: 0;
+            transform: translateY(0);
+            width: 4000px; /* 초기 너비 */
+            height: auto;
+            animation: move-left 50s linear infinite; /* 오른쪽에서 왼쪽으로 이동 */
+        }
+
+        .center-text {
+            width: 100%; /* Ensures the text container spans the entire width */
+            text-align: center;
+            font-size: 12px; /* 텍스트 크기 */
+            font-weight: lighter;
+            color: #333; /* 텍스트 색상 */
+            padding: 20px; /* Adds some padding around the text */
+            line-height: 1.8; /* 행간 조정 */
+        }
+
+        .hover-text {
+            font-size: 14px;
+            filter: blur(3px);
+            transition: filter 0.3s;
+            cursor: pointer;
+        }
+
+        .hover-text:hover {
+            filter: blur(0);
+        }
+
+        .audio-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background: url('images/play-icon.png') no-repeat center center;
+            background-size: cover;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it stays on top */
+        }
+    </style>
+</head>
+<body>
+    <!-- 음악 재생 버튼 -->
+    <div class="audio-button" id="audioButton"></div>
+    <audio id="backgroundMusic" src="audio/my-favorite-song.mp4" loop></audio>
+
+    <!-- 움직이는 이미지 -->
+    <img src="images/my-graphic.png" alt="움직이는 그래픽" class="moving-graphic">
+
+    <!-- 텍스트 섹션 -->
+    <div class="center-text">
+        <div class="hover-text">My favorite song, Iggy Pop - Lust for Life, played in the background. ss1989</div>
+        <div class="hover-text">All but one of the collections were held in Paris. aw98-99 was done in Nanterre, next to Paris</div>
+        <div class="hover-text">There is a tradition of giving red wine at every show.</div>
+        <div class="hover-text">However, at the last show, champagne was served to commemorate the 20th anniversary.</div>
+        <div class="hover-text">He performed shows with local residents for free and without seats in an abandoned land. ss90</div>
+        <div class="hover-text">The collection was shown through a self-produced film. aw93-94</div>
+        <div class="hover-text">There was a season where only flat clothes were made using paper patterns. ss98</div>
+        <div class="hover-text">He played his last show and secretly left without telling his teammates.</div>
+        <div class="hover-text">There was a show that re-presented the previous design without a new design. ss94</div>
+        <div class="hover-text">He preferred ordinary people to professional models.</div>
+        <div class="hover-text">In his show, the models walked on the runway with their boyfriends and performed kissing. fw90-91</div>
+        <div class="hover-text">Two shows were held simultaneously at different locations on the same day.</div>
+        <div class="hover-text">A model appeared at the end of the stage.</div>
+        <div class="hover-text">His father ran a hair salon, so wigs were familiar to him and often appeared on shows.</div>
+        <div class="hover-text">The famous song James Brown - I Got You was played during the finale of the last show.</div>
+        <div class="hover-text">At first, they decorated their offices with furniture discarded from the streets or the Salvation Army.</div>
+        <div class="hover-text">The white uniform was inspired by the model photo wearing a white blouse from High Fashion House.</div>
+        <div class="hover-text">There was an invitation made of children's paintings. ss90</div>
+        <div class="hover-text">There was a show that was free to watch without a guest list. ss90</div>
+        <div class="hover-text">He was inspired by Rei Kawakubo's disintegrationism.</div>
+        <div class="hover-text">When he was 7 years old, he watched a Paris fashion show on TV and dreamed of becoming a fashion designer.</div>
+        <div class="hover-text">The knit knitted by my mother wrote in the collection.aw90-91</div>
+        <div class="hover-text">Often, African percussion performances appeared. aw90-91</div>
+        <div class="hover-text">At the last stage of his studies, he was an assistant to Jean Paul Gaultier. 1984-1987</div>
+        <div class="hover-text">He also dismantled used clothing and created a new one.</div>
+        <div class="hover-text">A free advertising newspaper with the information of the show once became an invitation. aw89-90</div>
+        <div class="hover-text">He, who liked Barbie dolls, came up with the idea of growing real doll's clothes into doll's wardrobes in a real collection to be human size. aw94</div>
+        <div class="hover-text">In ss90, there was a lack of electricity, so I knocked on every door and asked them to pick up the electrical cord.</div>
+        <div class="hover-text">RAF SIMONS shed tears when he saw ss90.</div>
+        <div class="hover-text">He founded Maison Martin Margiela with a man named Jenny Meirens. 1988.08</div>
+        <div class="hover-text">Rei Kawakubo, who bought Margiela shoes that Jenny Meirens wore, was Margiela's first customer.</div>
+        <div class="hover-text">Margiela's first company location was a railway factory area outside Paris, where the underprivileged mainly lived.</div>
+        <div class="hover-text">The finale of his show was often featured by team members in experimental coats.</div>
+        <div class="hover-text">Tabi was inspired to see workers wearing it on the street on the day of his first visit to Tokyo.</div>
+        <div class="hover-text">Tabi appeared on the first show.</div>
+        <div class="hover-text">Jean Paul Gaultier was surprised to see his first show, saying that he knew he would do well, but he didn't know he would do so well.</div>
+        <div class="hover-text">He is from Belgium.</div>
+        <div class="hover-text">He was born in 1957, 5 years older than my mother.</div>
+        <div class="hover-text">When he was young, he was impressed by the movement of his father's head at the beauty salon.</div>
+        <div class="hover-text">The most important person in my life was my grandmother and she was the one who made the dress.</div>
+        <div class="hover-text">He loved French actor Brigitte Bardot.</div>
+        <div class="hover-text">The first clothes he made himself were Yves Saint Laurent’s gray flannel blazer. </div>
+        <div class="hover-text">He talked about a woman who is humorous, free, and does not lean on sexual attraction. </div>
+        <div class="hover-text">The models remember that his touch on the backstage when he dressed him was very soft.</div>
+        <div class="hover-text">When he was a student, he forged an invitation to go to Jean Paul Gaultier’s show.</div>
+        <div class="hover-text">He made a necklace pendant with the branches he collected in the park. ss93</div>
+        <div class="hover-text">He also used anonymity as a way to protect himself.</div>
+        <div class="hover-text">He didn't want to comment on his collection. I wanted to look at it and accept it.</div>
+        <div class="hover-text">Jean Paul Gaultier said, "Martin, you're too serious, he was a serious person.</div>
+        <div class="hover-text">He was a person who was good at tidying up. In fact, all the show records are in a white box in his showroom.</div>
+        <div class="hover-text">It was always difficult for him to be free.</div>
+        <div class="hover-text">He was inspired by the style of the 70s.</div>
+        <div class="hover-text">Even when short is popular, he hated short and showed a long dress. ss89</div>
+        <div class="hover-text">When the show was held in the Salvation Army furniture warehouse, the audience sat on each donated furniture and watched the show. aw92-93</div>
+        <div class="hover-text">deconstructivism began with Rei Kawakubo in the early 80s. If she focused on resistance to the current society, Martin was close to a real study of the composition or function of clothing.</div>
+        <div class="hover-text">At first, he was worried that people would not understand us, but later he was worried that people would understand us too well.</div>
+        <div class="hover-text">In order to show that he was the first in the theft problem, he selected the best of the collections he had so far and dyed it gray before presenting it again. ss94</div>
+        <div class="hover-text">His team continued to have economic difficulties.</div>
+        <div class="hover-text">He was recruited to Hermes, which looks very contrary. 1997</div>
+        <div class="hover-text">The way the models appeared was often unusual. fw96-97 parasol, fw03-04 neon sign, ss2006 aluminum dolly.</div>
+        <div class="hover-text">The actual colored ice was used as a model's jewelry to change the color of the clothes while on stage. ss06</div>
+        <div class="hover-text">He finished the show on the day of the 20th anniversary collection show and left without saying a word.</div>
+        <div class="hover-text">It is said that he regrets leaving without saying anything later.</div>
+        <div class="hover-text">He was uncomfortable that he became an art director as the brand grew. He wanted to be a better designer to make something himself, not just a creative director who directs assistants.</div>
+        <div class="hover-text">He also put a social message in fashion.</div>
+        <div class="hover-text">At the last show, two models walked inside in a huge dress.</div>
+        <div class="hover-text">After Martin left, Maison Martin Margiela changed its name to Maison Margiela.</div>
+        <div class="hover-text">He liked to explore or push himself very much. He was harsh on himself.</div>
+        <div class="hover-text">Currently, he is an artist, painting, sculpting, and doing various visual arts. An exhibition was also held in Seoul last year.</div>
+        <div class="hover-text">All his works were exhibited at the Palais Galiera in Paris in 2018.</div>
+        <div class="hover-text">His mother kept all his traces.</div>
+        <div class="hover-text">He was sincere about the clothes, not the mystery, but the strategy. I wanted my name to be connected to the product I made, not the face. He didn't want to be a celebrity and gave him a sense of balance that anonymity was very important and like other people.
+        </div>
+        <div class="hover-text">From him, the two most important details of the silhouette are shoulders and shoes. The shoulders show a specific attitude and the shoes determine the movement.</div>
+        <div class="hover-text">He gets a lot of stress when he wants to make shoes he's never seen before.</div>
+        <div class="hover-text">He had a great desire for Japanese designers.</div>
+        <div class="hover-text">He really wanted to do a fashion show at the theater, but that was the first place.</div>
+        <div class="hover-text">He liked that when he first put a veil on the model in clothes, he covered his face and there was only movement of clothes and clothes.</div>
+        <div class="hover-text">The first oversize appeared in the 21st century. The first oversize was exhibited in ss90.</div>
+        <div class="hover-text">He who was only on the outskirts, did it for the first time in the center of the Louvre in 2001ss.</div>
+        <div class="hover-text">He held a show with Rei Kawakubo’s Comme des Garçons. ss98</div>
+     
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const graphic = document.querySelector(".moving-graphic");
+            graphic.onload = () => {
+                const graphicWidth = graphic.offsetWidth; // 그래픽의 너비 계산
+
+                // @keyframes 동적 생성
+                const styleSheet = document.styleSheets[0];
+                styleSheet.insertRule(`
+                    @keyframes move-left {
+                        from { left: 100%; } /* 화면 오른쪽 밖에서 시작 */
+                        to { left: -${graphicWidth}px; } /* 화면 왼쪽 밖으로 이동 */
+                    }
+                `, styleSheet.cssRules.length);
+            };
+
+            // Audio control logic
+            const audioButton = document.getElementById("audioButton");
+            const backgroundMusic = document.getElementById("backgroundMusic");
+
+            let isPlaying = false;
+
+            audioButton.addEventListener("click", () => {
+                if (isPlaying) {
+                    backgroundMusic.pause();
+                    isPlaying = false;
+                } else {
+                    backgroundMusic.play();
+                    isPlaying = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
